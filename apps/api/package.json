@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "lint": "biome check .",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "echo 'Add test script here'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/biome-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.19.27",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "fastify": "^5.6.2"
+  }
+}
