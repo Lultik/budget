@@ -16,6 +16,7 @@
     "lint": "turbo run lint"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.10",
     "prettier": "^3.2.5",
     "prisma": "latest",
     "tsx": "4.19.1",
