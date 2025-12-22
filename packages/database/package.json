@@ -12,7 +12,7 @@
     "dev": "tsup src/* --watch",
     "format": "prisma format",
     "generate": "prisma generate",
-    "lint": "biome . --max-warnings 0",
+    "lint": "biome lint",
     "prebuild": "npm run generate",
     "predev": "npm run generate",
     "studio": "prisma studio"

@@ -15,6 +15,7 @@
         "noChildrenProp": "error",
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error",
+
         "useJsxKeyInIterable": "error"
       },
       "security": { "noDangerouslySetInnerHtmlWithChildren": "error" },
