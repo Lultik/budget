@@ -4,20 +4,32 @@
   "private": true,
   "scripts": {
     "dev": "ts-node src/server.ts",
-    "lint": "biome check .",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "lint": "biome check",
+    "lint:fix": "biome format . --write",
     "build": "tsc",
     "start": "node dist/server.js",
     "test": "echo 'Add test script here'",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format": "prisma format",
+    "generate": "prisma generate",
+    "studio": "prisma studio"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "devDependencies": {
     "@repo/biome-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^20.19.27",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "prisma": "^5.10.2"
   },
   "dependencies": {
-    "fastify": "^5.6.2"
+    "fastify": "^5.6.2",
+    "@prisma/client": "^5.10.2"
   }
 }
