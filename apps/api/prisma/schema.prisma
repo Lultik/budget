@@ -8,7 +8,37 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(cuid())
-  email String @unique
-  name  String?
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+
+  families  FamilyMember[]
+}
+
+model Family {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+
+  members   FamilyMember[]
+}
+
+model FamilyMember {
+  id        String   @id @default(cuid())
+  role      FamilyRole
+  createdAt DateTime @default(now())
+
+  userId    String
+  familyId  String
+
+  user      User     @relation(fields: [userId], references: [id])
+  family    Family   @relation(fields: [familyId], references: [id])
+
+  @@unique([userId, familyId])
+}
+
+enum FamilyRole {
+  OWNER
+  MEMBER
 }
